@@ -113,13 +113,13 @@
       <div class="results-container">
        <h3>Results</h3>
 
-        <h4>Assessments</h4>
+        <h4>Assessments:  <span id="assessmentsVerdict"></span></h4>
         <span id="assessments"></span>
-        <span id="assessmentsVerdict"></span>
+        
 
-        <h4>Vaccinations</h4>
+        <h4>Vaccinations:  <span id="vaccinationsVerdict"></span></h4>
         <span id="vaccinations"></span>
-        <span id="vaccinationsVerdict"></span>
+        
     </div>
   </div>
 
@@ -131,6 +131,46 @@
       <p>
         Te facete inermis accusam cum, laudem principes disputando eu est. Nam enim illum scriptorem ei, ad sumo ullum quaerendum vix. Et eum indoctum salutatus expetendis, ea lorem affert deserunt pri. Sed ei laudem maiestatis voluptatum. Vim duis docendi cu, ne saperet interesset has. Est ullum mundi neglegentur eu, debet doctus referrentur no pri. Te vis iusto aperiam, modo dicta dolorem ne usu.
       </p>
+
+  </div>
+
+  <div class="interactive-container">
+    <h3 id="interactive-header">What could you teach?</h3>
+    
+    <div class="questionContainer">
+      <h4>What's the highest level of education you've completed?</h4>
+      <table class="questionTable" id="educationQuestion">
+        <tr><td><input name="education" type="radio" value="0">Some high school</input></td></tr>
+        <tr><td><input name="education" type="radio" value="1">High school diploma or equivalent</input></td></tr>
+        <tr><td><input name="education" type="radio" value="2">Associate's degree</input></td></tr>
+        <tr><td><input name="education" type="radio" value="3">Bachelor's degree</input></td></tr>
+        <tr><td><input name="education" type="radio" value="3">Postgraduate degree</input></td></tr>
+      </table>
+    </div>
+
+    <div class="questionContainer" id="felonyQuestion">
+      <h4>Have you ever been convicted of a felony?</h4>
+      <table class="questionTable">
+        <tr><td><input name="felony" type="radio" value="0">Never</input></td></tr>
+        <tr><td><input name="felony" type="radio" value="1">Yes, more than five years ago</input></td></tr>
+        <tr><td><input name="felony" type="radio" value="2">Yes, in the last five years</input></td></tr>
+      </table>
+    </div>
+
+
+    <button class="calculate">Go</button>
+
+    <table class="answerTable">
+    <tr class="head"><td class="public" id="publicHead">Public school:  <span id="publicVerdict"></span></td><td class="homeschool" id="homeschoolHead">Homeschool:  <span id="homeschoolVerdict"></span></td></tr>
+    <tr class="answers"><td class="public" id="publicAnswer"><span></span></td><td class="homeschool" id="homeschoolAnswer"><span></span></td></tr>
+     <tr class="explanations1"><td class="public" id="publicExplanation1"><span></span></td><td class="homeschool" id="homeschoolExplanation1"><span></span></td></tr>
+      <tr class="explanations2"><td class="public" id="publicExplanation2"><span></span></td><td class="homeschool" id="homeschoolExplanation2"><span></span></td></tr>
+    </table>
+
+  </div>
+
+
+  <div class="text">
 
        <p>
         Est ei wisi laboramus, at per libris definiebas scripserit, vel doctus saperet detracto te. Et pri virtute molestie, eos eu etiam abhorreant. Vis ferri nusquam at, at vim nullam mollis suscipit. Viris utamur ne vis, justo nobis maluisset at est. Usu ad melius deleniti probatus.

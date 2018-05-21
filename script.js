@@ -40,16 +40,19 @@ $(document).ready(function () {
 
 		// Adds an X, check, or question mark depending on the law
 		if (stateAssessments < 3){
+			$(".results-container").find("#assessmentsVerdict").css("color","red");
 			$(".results-container").find("#assessmentsVerdict").html('&#10008;');
 
 			}
 
 		else if (stateAssessments == 4){
+			$(".results-container").find("#assessmentsVerdict").css("color","green");
 			$(".results-container").find("#assessmentsVerdict").html('&#10004;');
 
 		}
 
 		else {
+			$(".results-container").find("#assessmentsVerdict").css("color","black");
 			$(".results-container").find("#assessmentsVerdict").html('&#10067;');
 		}
 		
@@ -59,13 +62,142 @@ $(document).ready(function () {
 
 		// Adds an X, check, or question mark depending on the law
 		if (stateVaccinations < 4){
+			
+			$(".results-container").find("#vaccinationsVerdict").css("color","red");
 			$(".results-container").find("#vaccinationsVerdict").html('&#10008;');
 
 			}
 
 		else {
+			$(".results-container").find("#vaccinationsVerdict").css("color","green");
 			$(".results-container").find("#vaccinationsVerdict").html('&#10004;');
 		}
+
+
+
+
+
+
+	});
+
+	//Second interactive
+
+	var educationValue;
+	var felonyValue;
+
+	var homeschoolEducationAnswer = true;
+	var publicEducationAnswer = true;
+
+	var homeschoolFelonyAnswer = true;
+	var publicFelonyAnswer = true;
+
+	$(".calculate").click(function() {
+
+		//Clear anything left over from last time you ran the quiz
+		$(".public").each(function(){
+			$(this).find("span").text('');
+
+		});
+
+		$(".homeschool").each(function(){
+			$(this).find("span").text('');
+
+		});
+
+		//Get values from inputs
+		educationValue = $("input[name='education']:checked").val();
+		felonyValue = $("input[name='felony']:checked").val();
+
+
+		if (educationValue == 1){
+			publicEducationAnswer = false;
+			$("#publicExplanation1").find("span").text("In all 50 states, you must have at least a Bachelor's degree to teach public school.")
+
+			homeschoolEducationAnswer = true;
+			$("#homeschoolExplanation1").find("span").text("In every state except Washington, you can homeschool without any college credit.")
+
+
+		}
+
+
+		if (educationValue == 0){
+
+			publicEducationAnswer = false;
+			$("#publicExplanation1").find("span").text("In all 50 states, you must have at least a Bachelor's degree to teach public school.");
+
+			homeschoolEducationAnswer = true;
+			$("#homeschoolExplanation1").find("span").text("In all but 11 states, you can homeschool without a high school degree or equivalent.");
+		}
+
+		
+		if (educationValue == 2){
+			publicEducationAnswer = false;
+			$("#publicExplanation1").find("span").text("In all 50 states, you must have at least a Bachelor's degree to teach public school.");
+
+			homeschoolEducationAnswer = true;
+			$("#homeschoolExplanation1").find("span").text("If you have an Associate's degree, you can homeschool in any state, including Washington, which requires that homeschooling parents have some college credit.");
+
+		}
+
+		if (educationValue == 3) {
+			
+			publicEducationAnswer = true;
+			$("#publicExplanation1").find("span").text("If you have a Bachelor's degree, you can enroll in a teacher preparation program and eventually teach public school.");
+
+			homeschoolEducationAnswer = true;
+			$("#homeschoolExplanation1").find("span").text("If you have a Bachelor's degree, you can homeschool in any state, including Washington, which requires that homeschooling parents have some college credit.");
+		}
+
+		if (felonyValue == 0){
+			publicFelonyAnswer = true;
+			$("#publicExplanation2").find("span").text("If you've never been convicted of a felony, you can receive your teaching certificate and eventually teach public school.");
+
+			homeschoolFelonyAnswer = true;
+			$("#homeschoolExplanation2").find("span").text("If you've never been convicted of a felony, you can homeschool in any state, including Pennsylvania, which forbids anyone who's been convicted of a felony in the last five years from homeschooling.");
+
+		}
+
+		if (felonyValue == 1){
+			publicFelonyAnswer = false;
+			$("#publicExplanation2").find("span").text("While exact requirements vary from state to state and can change on a case-by-case basis, a felony conviction makes it nearly impossible for you to get a teaching certification.");
+
+			homeschoolFelonyAnswer = true;
+			$("#homeschoolExplanation2").find("span").text("If you were convicted of a felony more than five years ago, you can homeschool in any state, including Pennsylvania, which forbids anyone who's been convicted of a felony in the last five years from homeschooling.");
+
+		}
+
+		if (felonyValue == 2){
+			publicFelonyAnswer = false;
+			$("#publicExplanation2").find("span").text("While exact requirements vary from state to state and can change on a case-by-case basis, a felony conviction makes it nearly impossible for you to get a teaching certification.");
+
+			homeschoolFelonyAnswer = true;
+			$("#homeschoolExplanation2").find("span").text("If you were convicted of a felony more than five years ago, you can homeschool in any state—except Pennsylvania, which forbids anyone who's been convicted of a felony in the last five years from homeschooling.");
+
+		}
+
+		//Assign checks and Xes
+		if (homeschoolEducationAnswer && homeschoolFelonyAnswer){
+			$("#homeschoolVerdict").css("color","green");
+			$("#homeschoolVerdict").html('&#10004;');
+		}
+
+		else{
+			$("#homeschoolVerdict").css("color","red");
+			$("#homeschoolVerdict").html('&#10008;');
+		}
+
+		if (publicEducationAnswer && publicFelonyAnswer){
+			$("#publicVerdict").css("color","green");
+			$("#publicVerdict").html('&#10004;');
+		}
+
+		else{
+			$("#publicVerdict").css("color","red");
+			$("#publicVerdict").html('&#10008;');
+		}
+
+
+
 
 
 

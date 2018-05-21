@@ -139,9 +139,22 @@ button{
 }
 
 table{
-	
+	width:100%;
 	
 	/*margin: 0px auto;*/
+}
+
+.answerTable td{
+	width: 50%;
+	vertical-align: top;
+}
+
+td.public{
+	margin-right: 20px;
+}
+
+.head td{
+	font-weight: bold;
 }
 
 
@@ -152,6 +165,7 @@ td{
 	font-weight: 400;
 
 }
+
 
 /* Table styles for larger screens */
 @media screen and (min-width: 700px) {
@@ -171,14 +185,7 @@ td{
   }
  }
 
-  /* Total cost section styles */
+/* Quiz styles */
 
-  #totalCostSlot{
-  	font-weight: 400;	
-  }
 
-  span{
-  	font-weight: bolder;
-  }
-  
 
