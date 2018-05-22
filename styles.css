@@ -1,6 +1,6 @@
 /* General styles */
 
-h1, h2, body, button{
+h1, h2, body, button, #state{
 
 	font-family: 'Catamaran', sans-serif;
 	
@@ -196,6 +196,13 @@ td{
 	max-width: 700px;
 	border: 1px solid #D3D3D3;
 }
+
+#state{
+	outline: 1px #4279a3;
+	background: white;
+	/*background: #4279a3;*/
+	font-size: 1em;
+	border-radius: 0;}
 
 
 
