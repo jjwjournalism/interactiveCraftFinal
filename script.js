@@ -52,8 +52,8 @@ $(document).ready(function () {
 		}
 
 		else {
-			$(".results-container").find("#assessmentsVerdict").css("color","black");
-			$(".results-container").find("#assessmentsVerdict").html('&#10067;');
+			$(".results-container").find("#assessmentsVerdict").css("color","gold");
+			$(".results-container").find("#assessmentsVerdict").html('?');
 		}
 		
 
