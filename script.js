@@ -4,8 +4,9 @@ $(document).ready(function () {
 	var stateValues;
 	var stateAssessments;
 	var stateVaccinations;
-	//var stateSports;
 
+	
+	//Messages for the filter output
 	var assessmentMessages = [
 		"There's no assessment required by state law. Students can complete their schooling without ever being assessed by a non-parent.",
 		"State law requires that students complete some kind of assessment. But that assessment can be administered by a parent, so there's no guarantee that homeschooled children will come into contact with a mandated reporter. Furthermore, parents don't need to submit their test results, so there's no way to enforce the assessment requirements. Under state law, a student could complete these assessments (or skip them) without ever coming into contact with a mandated reporter.",
@@ -14,13 +15,13 @@ $(document).ready(function () {
 		"State law requires that children complete either a standardized test or a portfolio review, both in the presence of an adult who's not a parent. If a child is showing signs of abuse, the administrator or portfolio reviewer can report them to CPS.",
 		"It's up to each school district to decide what sort of assessment (if any) homeschooling students must complete."
 		];
+
 	var vaccinationMessages = ["State law doesn't require homeschooled students to be vaccinated, so a homeschooled child could go years without seeing a doctor.",
 		"There are different rules for different types of homeschooling. But overall, state law doesn't require homeschooled students to be vaccinated, so a homeschooled child could go years without seeing a doctor.",
 		"State law requires that homeschooled students be vaccinated. But since the law doesn't ask for proof of vaccination, a homeschooled child could go years without seeing a doctor.",
 		"There are different rules for different types of homeschooling. But overall, state law does require that homeschooled students be vaccinated. But since the law doesn't ask for proof of vaccination, a homeschooled child could go years without seeing a doctor.",
 		"State law requires that homeschooled students be vaccinated, and parents must provide proof that their children have gotten all the necessary shots. So even homeschooled kids have to go to the doctor.",
 		"There are different rules for different types of homeschooling. But overall, state law requires that homeschooled students be vaccinated, and parents must provide proof that their children have gotten all the necessary shots. So even homeschooled kids have to go to the doctor." ];
-	var sportsMessages = [];
 
 	$("#state").change(function(){
 		
@@ -120,6 +121,7 @@ $(document).ready(function () {
 		}
 
 
+		//Update variables and fill in explanation table according to the inputs for education
 		if (educationValue == 0){
 
 			publicEducationAnswer = false;
@@ -148,6 +150,8 @@ $(document).ready(function () {
 			$("#homeschoolExplanation1").find("span").text("If you have a Bachelor's degree, you can homeschool in any state, including Washington, which requires that homeschooling parents have some college credit.");
 		}
 
+		
+		//Update variables and fill in explanation table according to the inputs for criminal history
 		if (felonyValue == 0){
 			publicFelonyAnswer = true;
 			$("#publicExplanation2").find("span").text("If you've never been convicted of a felony, you can receive your teaching certificate and eventually teach public school.");
@@ -195,12 +199,6 @@ $(document).ready(function () {
 			$("#publicVerdict").css("color","red");
 			$("#publicVerdict").html('&#10008;');
 		}
-
-
-
-
-
-
 
 
 

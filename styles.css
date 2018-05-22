@@ -1,8 +1,8 @@
 /* General styles */
 
-h1, h2, body, button, #state{
+h1, h2, h3, h4, body, button, #state{
 
-	font-family: 'Catamaran', sans-serif;
+	font-family: 'Libre Franklin', sans-serif;
 	
 }
 
@@ -27,16 +27,15 @@ h4{
 	margin-bottom: 0px;
 }
 
-.interactive-header{
-	text-align: left;
-	max-width: 600px;
-	margin-top: 0px;
+h1, h2, h3, h4{
+	font-weight: lighter;
 }
 
 body, td {
 
 	font-weight: 200;	
 }
+
 
 .text{
 
@@ -60,7 +59,9 @@ body, td {
 	max-width: 800px;
 	display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 img{
@@ -82,6 +83,20 @@ img{
   }
 
  }
+
+ /* Interactive formatting styles */
+.interactive-header{
+	text-align: left;
+	max-width: 600px;
+	margin-top: 0px;
+	font-size: 1.3em;
+	font-weight: lighter;
+}
+
+.interactive-subheds{
+	font-weight: bold;
+}
+
 
 
 /* Input styles */
@@ -111,7 +126,7 @@ button{
 	background-color: #4279a3; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 12px 30px;
     text-align: left;
     text-decoration: none;
     display: inline-block;
@@ -132,12 +147,12 @@ button{
 
 .interactive-container{
 	font-size: 1em;
-	margin: 0px auto;
+	margin: 20px auto;
 	text-align: left;
-	border: 2px solid #4279a3;
+	/*border: 2px solid #4279a3;*/
 	padding: 15px;
-	padding-top: 5px;
 	max-width: 650px;
+	background: rgba(66, 121, 163, 0.1);
 	/*padding-left: 5px;*/
 }
 
@@ -187,9 +202,9 @@ td{
 
   }
  }
+ 
 
 /* Map styles */
-
 .mapWrapper{
 	margin: 20px auto;
 	padding: 20px;
